@@ -1,11 +1,13 @@
 package com.rome.mavennewsapp.newsapi;
 
-import com.rome.mavennewsapp.model.Source;
+
 import lombok.Data;
+
+import java.util.List;
+
 
 @Data
 public class NewsApiArticle {
-    private Source source;
     private String author;
     private String title;
     private String description;
