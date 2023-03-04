@@ -10,4 +10,6 @@ class MavenNewsAppApplicationTests {
 	void contextLoads() {
 	}
 
+
+
 }

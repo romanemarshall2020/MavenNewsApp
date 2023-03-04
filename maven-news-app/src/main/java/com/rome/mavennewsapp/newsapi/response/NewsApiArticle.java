@@ -1,13 +1,14 @@
-package com.rome.mavennewsapp.newsapi;
+package com.rome.mavennewsapp.newsapi.response;
 
 
 import lombok.Data;
 
 import java.util.List;
 
-
+// this is a for receiving articles
 @Data
 public class NewsApiArticle {
+    private List<NewsApiSource> sources;
     private String author;
     private String title;
     private String description;

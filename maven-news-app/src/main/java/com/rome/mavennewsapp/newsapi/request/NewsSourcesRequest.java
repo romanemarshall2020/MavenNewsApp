@@ -1,11 +1,14 @@
-package com.rome.mavennewsapp.newsapi;
+package com.rome.mavennewsapp.newsapi.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class NewsSourcesRequest {
-//    private String apiKey;
+    @JsonIgnore
+    private String apiKey;
+
     @JsonProperty("category")
     private String category;
 
