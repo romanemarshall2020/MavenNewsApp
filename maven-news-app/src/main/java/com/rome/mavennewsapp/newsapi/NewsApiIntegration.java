@@ -23,7 +23,7 @@ public class NewsApiIntegration {
     }
     @GetMapping(value = "articles")
     public ResponseEntity<Object> getAll(){
-        String uri = "https://newsapi.org/v2/everything";
+        String uri = "https://newsapi.org/v2/everything?q&apiKey=ab3971f7a2af4190b5dced2f8d0e4719";
         RestTemplate restTemplate = new RestTemplate();
 
         ResponseEntity<Object> results = restTemplate.getForEntity(uri, Object.class);
