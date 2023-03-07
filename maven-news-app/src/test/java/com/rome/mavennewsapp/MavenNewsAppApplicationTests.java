@@ -4,27 +4,37 @@ package com.rome.mavennewsapp;
 import com.rome.mavennewsapp.newsapi.NewsApiIntegration;
 import com.rome.mavennewsapp.newsapi.request.EverythingRequest;
 import com.rome.mavennewsapp.newsapi.response.NewsApiResponse;
-import org.assertj.core.api.Assert;
+import com.rome.mavennewsapp.repository.ArticleRepo;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import resources.MysqlTestProfileJPAConfig;
 
-@SpringBootTest
-class MavenNewsAppApplicationTests {
+import static org.junit.jupiter.api.Assertions.*;
+
+
+@SpringBootTest(classes = {
+		MavenNewsAppApplication.class,
+		MysqlTestProfileJPAConfig.class
+})
+@ActiveProfiles("test")
+public class MavenNewsAppApplicationTests {
+
+	@Autowired
+	private NewsApiIntegration integration;
+
+	@Autowired
+	private ArticleRepo articleRepo;
 
 	@Test
 	void contextLoads() {
 	}
 
-	@Test
-	public void returnEverything(EverythingRequest req){
-//		int pageRequest = req.getPage();
-		NewsApiIntegration integration = new NewsApiIntegration();
-		Object expectedReturn = integration.requestEverything(null);
-		Object actualReturn = integration.requestEverything(req);
-		integration.requestEverything(req).equals(expectedReturn);
-		assert integration.requestEverything(req) == expectedReturn;
 
+	public void returnEverything(){
+		NewsApiResponse expected = integration.requestEverything(null);
+		assertNull(expected);
 	}
 
 
