@@ -14,11 +14,7 @@ import resources.MysqlTestProfileJPAConfig;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@SpringBootTest(classes = {
-		MavenNewsAppApplication.class,
-		MysqlTestProfileJPAConfig.class
-})
-@ActiveProfiles("test")
+@SpringBootTest(classes = MavenNewsAppApplication.class)
 public class MavenNewsAppApplicationTests {
 
 	@Autowired
