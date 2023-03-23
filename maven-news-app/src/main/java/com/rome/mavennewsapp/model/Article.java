@@ -2,6 +2,7 @@ package com.rome.mavennewsapp.model;
 
 
 //import jakarta.persistence.*;
+import com.rome.mavennewsapp.model.sources.ArticleSource;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,12 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
-    private Source source;
+    private ArticleSource source;
     private String author;
     private String title;
+    private String description;
+    private String url;
+    private String urlToImage;
+    private String publishedAt;
+    private String content;
 }

@@ -1,9 +1,6 @@
-package com.rome.mavennewsapp.model;
+package com.rome.mavennewsapp.model.sources;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.*;
-//import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table
-public class Source {
+public class ArticleSource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    String id;
     String name;
 }
