@@ -24,7 +24,7 @@ public class NewsApiIntegration {
         List<Article> output = new ArrayList<>();
         HttpHeaders headers = new HttpHeaders();
         headers.add("x-api-key", "ab3971f7a2af4190b5dced2f8d0e4719");
-        ResponseEntity<Map<String,Object>> results = restTemplate.exchange("https://newsapi.org/v2/everything", HttpMethod.GET, new HttpEntity<>(headers), new ParameterizedTypeReference<>(){}, Map.of("q","java","from","2023-02-28","to","2023-02-28","sortBy","popularity"));
+        ResponseEntity<Map<String,Object>> results = restTemplate.exchange("https://newsapi.org/v2/everything?q={q}&from={from]&to={to}&sortBy={sortBy}", HttpMethod.GET, new HttpEntity<>(headers), new ParameterizedTypeReference<>(){}, Map.of("q","java","from","2023-02-28","to","2023-02-28","sortBy","popularity"));
 
         if (results.getBody() != null && results.getBody().get("articles") != null && results.getBody().get("articles") instanceof List) {
             output = ((List<Object>)results.getBody().get("articles")).stream().map(article->mapper.convertValue(article, Article.class)).collect(Collectors.toList());
