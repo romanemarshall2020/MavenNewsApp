@@ -1,7 +1,7 @@
 package com.rome.mavennewsapp.newsapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.rome.mavennewsapp.model.Article;
+import com.rome.mavennewsapp.model.article.Article;
 import com.rome.mavennewsapp.model.sources.ArticleSource;
 import com.rome.mavennewsapp.newsapi.request.EverythingRequest;
 import org.springframework.core.ParameterizedTypeReference;
@@ -36,20 +36,25 @@ public class NewsApiIntegration {
 ////        if ( req.getSearchIn() != null) {
 ////            params.put("searchIn", req.getSearchIn());
 ////        }
-
+        // Request Entity that contains header, our uri and our httpMethod
         RequestEntity<List<Object>> apiReq = new RequestEntity<>(headers, HttpMethod.GET, uri);
 
+        // TypeReference of our Response
         ParameterizedTypeReference<Map<String, Object>> typeRef = new ParameterizedTypeReference<>() {};
 
+//        using restTemplate method exchange to make our request and get back a response based no our uri params
         ResponseEntity<Map<String, Object>> results = restTemplate.exchange(builder.buildAndExpand(params).toUri(), HttpMethod.GET,apiReq, typeRef);
 
+        // creates a variable that takes in an arrayList of Objects (Status, totalResults, and articles(An arrayList of articles)
         ArrayList<Object> apiArticles = (ArrayList<Object>) results.getBody().get("articles");
-//        Map<String,Object> article = (Map<String, Object>) articles.get(0);
+
+        // creates a variable that only contains the articles from our response object
         ArrayList<Article> articleList = new ArrayList<>();
 
-
+        // for loop that loops through each article inside the articleList variable which is inside of apiArticles variable
         for (Object apiArticle : apiArticles){
            Article article = new Article();
+           // also has a source variable to store or list of sources for each article
            ArticleSource source = new ArticleSource();
 
            Map<String, Object> temp = (Map<String, Object>) apiArticle;
@@ -57,10 +62,15 @@ public class NewsApiIntegration {
            source.setId(apiSource.get("id"));
            source.setName(apiSource.get("name"));
 
+//           setting our article
            article.setSource(source);
            article.setTitle((String) temp.get("title"));
            article.setAuthor((String) temp.get("author"));
            article.setDescription((String) temp.get("description"));
+           article.setUrl((String) temp.get("url"));
+           article.setUrlToImage((String) temp.get("urlToImage"));
+           article.setContent((String) temp.get("content"));
+           article.setPublishedAt((String) temp.get("publishedAt"));
 
 
            articleList.add(article);

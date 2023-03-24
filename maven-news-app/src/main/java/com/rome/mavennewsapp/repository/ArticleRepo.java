@@ -1,6 +1,6 @@
 package com.rome.mavennewsapp.repository;
 
-import com.rome.mavennewsapp.model.Article;
+import com.rome.mavennewsapp.model.article.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;

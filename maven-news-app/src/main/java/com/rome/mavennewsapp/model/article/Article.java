@@ -1,4 +1,4 @@
-package com.rome.mavennewsapp.model;
+package com.rome.mavennewsapp.model.article;
 
 
 //import jakarta.persistence.*;
