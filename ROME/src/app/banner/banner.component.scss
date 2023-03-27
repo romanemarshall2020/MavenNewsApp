@@ -1,0 +1,22 @@
+.banner-sect{
+// display: flex;
+// flex-direction: row;
+border: 3px solid;
+ border-color: brown;
+  max-width: fit-content;
+  background-color: blue;
+
+}
+.banner-conatainer {
+  width: auto;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+
+  border: #000000;
+}
+
+body{
+  width: 100%;
+}
