@@ -5,7 +5,7 @@
   transition: 0.4s;
   // border-radius: 6px;
   // border: 1px solid #dcdcdc;
-
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -14,6 +14,8 @@
   font-family: Arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
+  // justify-content: center;
+  text-align: center;
   // padding: 6px 24px;
   text-decoration: none;
   // text-shadow: 0 1px 0 #ffffff;
@@ -24,15 +26,16 @@
   // box-shadow: inset 0 1px 0 0 #dcecfb;
   // background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
   // border: 1px solid #84bbf3;
-  // color: #ffffff;
-  // text-shadow: 0 1px 0 #528ecc;
+  color: #c35b5b;
+  text-shadow: 0 1px 0 #ffffff;
 }
 
 
 // container for entire navbar
 .nav-container {
   display: flex;
-  height: 70px;
+  flex-wrap: wrap;
+  height: 50px;
   flex-direction: column;
   list-style: none;
   font-weight: bold;
@@ -40,26 +43,32 @@
   background-color: #000000;
   justify-content: center;
   align-items: center;
+  min-width: 100%;
+  max-width: 100%;
+  margin-left: 0;
 
 
 
 }
 .list{
   padding: 0;
+  text-align: center;
 }
 
 .nav-container .list {
   list-style-type: none;
-  margin: 10px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap ;
-  justify-content: space-around;
+  max-width: 100%;
 
 }
 
+html body{
+ max-width: 100%;
+}
 
 .nav-container .links{
+  max-width: 100%;
+  // min-width: 100%;
   margin: 10px 30px 10px 30px;
 //  padding: 10px 50px;
 
