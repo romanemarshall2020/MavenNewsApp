@@ -15,7 +15,7 @@ import java.util.*;
 // News Api client that connects to the api and matches m model objects to the json properties along with setting the api key.
 @Component
 public class NewsApiIntegration {
-    public List<Article> requestEverything(EverythingRequest req) throws JsonProcessingException {
+    public List<Article> requestEverything() throws JsonProcessingException {
         Map<String, Object> params = new HashMap<>();
         URI uri = URI.create("https://newsapi.org/v2/everything");
 //        ObjectMapper mapper = new ObjectMapper();
@@ -32,10 +32,7 @@ public class NewsApiIntegration {
             .queryParam("sortBy", "popularity")
             .queryParam("apiKey", "ab3971f7a2af4190b5dced2f8d0e4719");
 
-        System.out.println(builder.buildAndExpand(params).toUri());
-////        if ( req.getSearchIn() != null) {
-////            params.put("searchIn", req.getSearchIn());
-////        }
+//        System.out.println(builder.buildAndExpand(params).toUri());
         // Request Entity that contains header, our uri and our httpMethod
         RequestEntity<List<Object>> apiReq = new RequestEntity<>(headers, HttpMethod.GET, uri);
 
@@ -79,7 +76,7 @@ public class NewsApiIntegration {
 //        System.out.println("[result]: " + results.getBody().get("articles"));
 //        System.out.println("[article]: " + article.get("title"));
 
-        System.out.println(articleList);
+//        System.out.println(articleList);
         return articleList;
     }
 
