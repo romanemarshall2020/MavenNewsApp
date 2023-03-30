@@ -15,7 +15,7 @@ import java.util.*;
 // News Api client that connects to the api and matches m model objects to the json properties along with setting the api key.
 @Component
 public class NewsApiIntegration {
-    public List<Article> requestEverything() throws JsonProcessingException {
+    public List<Article> requestEverything() {
         Map<String, Object> params = new HashMap<>();
         URI uri = URI.create("https://newsapi.org/v2/everything");
 //        ObjectMapper mapper = new ObjectMapper();

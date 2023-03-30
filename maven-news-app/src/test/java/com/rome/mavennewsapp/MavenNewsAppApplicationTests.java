@@ -12,8 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest(classes = MavenNewsAppApplication.class)
@@ -35,7 +34,22 @@ public class MavenNewsAppApplicationTests {
 	@Test
 	public void returnArticles() throws JsonProcessingException {
 		List<Article> list = newsService.getArticles();
-		assertNotNull(list);
+		assertNotNull(list, "List Exist");
+
+		assertTrue(!list.isEmpty(), "List contains articles" );
+
+		for (Article article : list
+			 ) {
+			String titles = article.getTitle();
+			// test that title is present
+			assertNotNull(titles);
+			// test that title is not blank
+
+
+		}
+		// get an article
+		// use a for loop to go throw collection
+		// check that each article has a title
 	}
 
 
