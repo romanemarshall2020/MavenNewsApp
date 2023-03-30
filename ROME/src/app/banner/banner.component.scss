@@ -10,9 +10,13 @@
 .banner-container {
   justify-content: space-around;
   display: flex;
+  gap: .3em;
   flex-direction: row;
   max-width: 100%;
   background-color: rgb(255, 255, 255);
+}
+.banner-container > *{
+  flex: 1;
 }
 p{
 text-align: center;
