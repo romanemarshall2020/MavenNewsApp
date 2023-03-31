@@ -10,10 +10,8 @@
   margin: 0;
   justify-content: space-around;
 
-
-
-
 }
+
 
 .container{
   width: 500px;
@@ -33,6 +31,11 @@
   background-size: cover;
   border-radius: 1%;
 
+}
+
+#desc, #author, #published {
+  font-weight: 400;
+  color: aliceblue;
 }
 
 
