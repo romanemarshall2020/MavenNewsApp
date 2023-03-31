@@ -20,9 +20,6 @@ public class MavenNewsAppApplicationTests {
 	private NewsApiIntegration integration;
 
 	@Autowired
-	private ArticleRepo articleRepo;
-
-	@Autowired
 	private NewsService newsService;
 
 	@Test
@@ -41,6 +38,7 @@ public class MavenNewsAppApplicationTests {
 			assertNotNull(titles, "Title is present");
 			// test that title is not blank
 			assertFalse(titles.isEmpty(), "Title is not empty");
+			// test that published
 		}
 	}
 

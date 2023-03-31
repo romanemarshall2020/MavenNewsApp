@@ -13,7 +13,7 @@ import java.util.List;
 public class NewsService {
 
     @Autowired
-    NewsApiIntegration newsApiIntegration;
+   private NewsApiIntegration newsApiIntegration;
     public List<Article> getArticles() throws JsonProcessingException {
         List<Article> articleList = newsApiIntegration.requestEverything();
         return articleList;
