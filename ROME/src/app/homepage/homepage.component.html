@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../app/homepage/homepage.component.scss">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
+
 <body>
   <h1 class="home">Home Page</h1>
-<div class="container-one" >
-<div class="container" *ngFor="let article of articles">
+  <span class="material-symbols-outlined">
+    search
+  </span>
+  <div class="container-one">
+    <div class="container" *ngFor="let article of articles">
 
-  <div id="box-container">
-    <div id="box"  >
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
-      </div>
-      <div class="title-container">
-      <h2 id="title">{{article.title}}</h2>
+      <!-- <li class="container-one" id="carousel__slide1"
+      tabindex="0"
+      class="carousel__slide">
+    <div class="carousel__snapper">
+      <a href="#carousel__slide4"
+         class="carousel__prev">Go to last slide</a>
+      <a href="#carousel__slide2"
+         class="carousel__next">Go to next slide</a>
     </div>
-      <div class="desc-container">
-        <p id="desc">{{article.description}}</p>
+  </li> -->
+      <div id="box-container">
+        <div id="box">
+          <div class="trans-container">
+            <div class="title-container">
+              <h3 id="title">{{article.title}}</h3>
+             </div>
+          </div>
+
+             <div class="desc-container">
+            <p id="desc">{{article.description}}</p>
+          </div>
+          <div class="author-container">
+            <h4 id="author">Author:{{article.author}}</h4>
+          </div>
+          <div class="published-container">
+            <h6 id="published">Published:{{article.publishedAt}}</h6>
+          </div>
+        </div>
       </div>
-      <div class="author-container">
-        <h4 id="author">Author:{{article.author}}</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:{{article.publishedAt}}</h6>
-      </div>
+    </div>
+
+
   </div>
-  </div>
-</div>
-</div>
 
 </body>
-</html>
 
+</html>

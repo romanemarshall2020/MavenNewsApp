@@ -5,24 +5,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../app/navigation/navigation.component.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
   <title>Document</title>
 </head>
 <body>
   <!-- <button class="cn-button" id="cn-button">+</button> -->
-<div class="nav-container" id="cn-wrapper">
+<div class="nav-container">
+  <div class="Logo-container">
+    <h1 class="logo">Rome</h1>
+  </div>
    <ul class="list">
-    <div>
     <li > <a id="home-link" class="links" routerLinkActive="activeLink" routerLink="home" >HOME</a></li>
-    </div>
-
     <li > <a id="headlines-link" class="links" routerLinkActive="activeLink" routerLink="headlines" >HEADLINES</a></li>
+    <li > <a id="headlines-link" class="links" routerLinkActive="activeLink" routerLink="headlines" >CATEGORY</a></li>
     <li > <a id="following-link" class="links" routerLink="" >FOLLOWING</a></li>
     <li > <a id="region-link" class="links"  routerLink="" >REGION</a></li>
-    <li > <a id="search-link" class="links"  routerLink="" >SEARCH</a></li>
+    <!-- <li > </li> -->
    </ul>
+  <!-- </div> -->
 </div>
-<div id="cn-overlay" class="cn-overlay"></div>
+<!-- <div id="cn-overlay" class="cn-overlay"></div> -->
 </body>
 </html>
 
