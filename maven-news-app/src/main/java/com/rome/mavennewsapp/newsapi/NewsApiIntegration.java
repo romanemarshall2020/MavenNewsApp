@@ -26,9 +26,9 @@ public class NewsApiIntegration {
 
         // used to make uri with queryPara
         UriComponentsBuilder builder = UriComponentsBuilder.fromUri(uri)
-            .queryParam("q", "Java")
-            .queryParam("from", "2023-02-28")
-            .queryParam("to", "2023-02-28")
+            .queryParam("q", "Tech")
+            .queryParam("from", "2023-03-28")
+            .queryParam("to", "2023-04-1")
             .queryParam("sortBy", "popularity")
             .queryParam("apiKey", "ab3971f7a2af4190b5dced2f8d0e4719");
 
