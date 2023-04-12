@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MavenNewsAppApplication {
 
+
 	public static void main(String[] args) throws JsonProcessingException {
 		SpringApplication.run(MavenNewsAppApplication.class, args);
  		NewsApiIntegration newsApiIntegration = new NewsApiIntegration();
