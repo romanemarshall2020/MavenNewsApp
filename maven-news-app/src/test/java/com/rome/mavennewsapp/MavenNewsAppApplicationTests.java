@@ -19,8 +19,8 @@ public class MavenNewsAppApplicationTests {
 	@Autowired
 	private NewsApiIntegration integration;
 
-	@Autowired
-	private ArticleRepo articleRepo;
+//	@Autowired
+//	private ArticleRepo articleRepo;
 
 	@Autowired
 	private NewsService newsService;
