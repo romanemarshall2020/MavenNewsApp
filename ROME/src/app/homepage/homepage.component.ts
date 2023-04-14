@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from '../models/article';
+import { ArticleService } from '../service/article.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  articles: Article[] | undefined
+
+  constructor(private articleService: ArticleService) { }
+
+   imgSrcs = []
+   myImgs = []
+
+
 
   ngOnInit(): void {
+  this.postArticles()
+
+
   }
+
+   postArticles = () => {
+
+
+   let articles = this.articleService.findAll().subscribe(data=> {
+      this.articles = data
+    })
+
+    return articles
+    // console.log("my articles " + articles)
+  }
+
+
 
 }

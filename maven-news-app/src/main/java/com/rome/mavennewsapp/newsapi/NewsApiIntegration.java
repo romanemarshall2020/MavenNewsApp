@@ -1,24 +1,32 @@
 package com.rome.mavennewsapp.newsapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.rome.mavennewsapp.model.EverythingReq;
 import com.rome.mavennewsapp.model.article.Article;
 import com.rome.mavennewsapp.model.sources.ArticleSource;
 import com.rome.mavennewsapp.newsapi.request.EverythingRequest;
+import org.springframework.boot.autoconfigure.web.format.DateTimeFormatters;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import javax.swing.text.DateFormatter;
 import java.net.URI;
+import java.text.DateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 // News Api client that connects to the api and matches m model objects to the json properties along with setting the api key.
 @Component
 public class NewsApiIntegration {
-    public List<Article> requestEverything(EverythingRequest req) throws JsonProcessingException {
+
+    private static final DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    public List<Article> requestEverything(EverythingReq req) {
         Map<String, Object> params = new HashMap<>();
         URI uri = URI.create("https://newsapi.org/v2/everything");
-//        ObjectMapper mapper = new ObjectMapper();
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("x-api-key", "ab3971f7a2af4190b5dced2f8d0e4719");
@@ -26,16 +34,16 @@ public class NewsApiIntegration {
 
         // used to make uri with queryPara
         UriComponentsBuilder builder = UriComponentsBuilder.fromUri(uri)
-            .queryParam("q", "Java")
-            .queryParam("from", "2023-02-28")
-            .queryParam("to", "2023-02-28")
-            .queryParam("sortBy", "popularity")
-            .queryParam("apiKey", "ab3971f7a2af4190b5dced2f8d0e4719");
+            .queryParam("q", "Tech")
+//            .queryParam("from", req.getFrom().format(format))
+//            .queryParam("to", req.getTo().format(format))
+//            .queryParam("sortBy", "popularity")
+//            .queryParam("apiKey", "ab3971f7a2af4190b5dced2f8d0e4719")
+            ;
+//        if(builder.queryParam("from", req.getFrom().format(format));
+//        builder.queryParam("to", req.getTo().format(format));)
 
-        System.out.println(builder.buildAndExpand(params).toUri());
-////        if ( req.getSearchIn() != null) {
-////            params.put("searchIn", req.getSearchIn());
-////        }
+
         // Request Entity that contains header, our uri and our httpMethod
         RequestEntity<List<Object>> apiReq = new RequestEntity<>(headers, HttpMethod.GET, uri);
 
@@ -79,7 +87,7 @@ public class NewsApiIntegration {
 //        System.out.println("[result]: " + results.getBody().get("articles"));
 //        System.out.println("[article]: " + article.get("title"));
 
-        System.out.println(articleList);
+//        System.out.println(articleList);
         return articleList;
     }
 

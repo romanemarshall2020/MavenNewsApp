@@ -1,178 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../app/homepage/homepage.component.scss">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
+
 <body>
   <h1 class="home">Home Page</h1>
-<div class="container-one">
-<div class="container">
+  <span class="material-symbols-outlined">
+    search
+  </span>
+  <div class="container-one">
+    <div class="container" *ngFor="let article of articles">
+      <div id="box-container">
+        <div id="box">
+          <div class="trans-container">
+            <div class="title-container">
+              <h3 id="title">{{article.title}}</h3>
+             </div>
+          </div>
 
-  <div id="box-container">
-    <div id="box">
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
+             <div class="desc-container">
+            <p id="desc">{{article.description}}</p>
+          </div>
+          <div class="author-container">
+            <h4 id="author">Author:{{article.author}}</h4>
+          </div>
+          <div class="published-container">
+            <h6 id="published">Published:{{article.publishedAt}}</h6>
+          </div>
+        </div>
       </div>
-      <div class="title-container">
-      <h2 id="title">Title of Article it can also be very long so it might require a wrapper</h2>
     </div>
-      <div class="desc-container">
-        <p id="desc">Description</p>
-      </div>
-      <div class="author-container">
-        <h4 id="author">Author:</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:</h6>
-      </div>
+
+
   </div>
-  </div>
-</div>
-
-<div class="container">
-
-  <div id="box-container">
-    <div id="box">
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
-      </div>
-      <div class="title-container">
-      <h2 id="title">Title of Article it can also be very long so it might require a wrapper</h2>
-    </div>
-      <div class="desc-container">
-        <p id="desc">Description</p>
-      </div>
-      <div class="author-container">
-        <h4 id="author">Author:</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:</h6>
-      </div>
-  </div>
-  </div>
-</div>
-
-<div class="container">
-
-  <div id="box-container">
-    <div id="box">
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
-      </div>
-      <div class="title-container">
-      <h2 id="title">Title of Article it can also be very long so it might require a wrapper</h2>
-    </div>
-      <div class="desc-container">
-        <p id="desc">Description</p>
-      </div>
-      <div class="author-container">
-        <h4 id="author">Author:</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:</h6>
-      </div>
-  </div>
-  </div>
-</div>
-
-
-<div class="container">
-
-  <div id="box-container">
-    <div id="box">
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
-      </div>
-      <div class="title-container">
-      <h2 id="title">Title of Article it can also be very long so it might require a wrapper</h2>
-    </div>
-      <div class="desc-container">
-        <p id="desc">Description</p>
-      </div>
-      <div class="author-container">
-        <h4 id="author">Author:</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:</h6>
-      </div>
-  </div>
-  </div>
-</div>
-
-
-
-<div class="container">
-
-  <div id="box-container">
-    <div id="box">
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
-      </div>
-      <div class="title-container">
-      <h2 id="title">Title of Article it can also be very long so it might require a wrapper</h2>
-    </div>
-      <div class="desc-container">
-        <p id="desc">Description</p>
-      </div>
-      <div class="author-container">
-        <h4 id="author">Author:</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:</h6>
-      </div>
-  </div>
-  </div>
-</div>
-
-
-
-<div class="container">
-
-  <div id="box-container">
-    <div id="box">
-      <!-- <div class="img-container"> -->
-        <!-- <img src="../../assets/grass.jpg"alt=""> -->
-      <!-- </div> -->
-      <div class="trans-container">
-
-      </div>
-      <div class="title-container">
-      <h2 id="title">Title of Article it can also be very long so it might require a wrapper</h2>
-    </div>
-      <div class="desc-container">
-        <p id="desc">Description</p>
-      </div>
-      <div class="author-container">
-        <h4 id="author">Author:</h4>
-      </div>
-      <div class="published-container">
-        <h6 id="published">Published:</h6>
-      </div>
-  </div>
-  </div>
-</div>
-
-</div>
 
 </body>
-</html>
 
+</html>
