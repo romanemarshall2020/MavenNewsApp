@@ -1,149 +1,196 @@
-.home{
-  text-align: center;
 
-  margin-top: 0px;
+body, html{
+  height: 100vh;
 }
 
-.container-one {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  // --grid-cols: 2;
-  // display: grid;
-  // gap: var(--grid-gap, 1rem);
-  // grid-template-columns: repeat(var(--grid-cols), 2fr);
-  // width:fit-content;
+body{
   margin: 0;
-  justify-content: space-between;
-  align-items: center;
-  border: 3px solid black;
-  overflow-y:hidden;
-  height: 400px;
-
-
-}
-#box-container{
-  display: flex;
-  flex: 1;
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
-  animation-direction: alternate;
-  animation-timing-function:cubic-bezier(0.175, 0.185, 0.185, 0.185);
- 
+  display: grid;
+  grid-template-columns: auto 27% 27% 27%;
+  grid-template-rows:  8% 30% auto 10%;
+  grid-area: "sidebar header header header"
+            "sidebar" "section1 section2 section3"
+            "sidebar" "main main main"
+            "footer footer footer footer";
 }
 
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
+aside{
+  grid-area: sidebar;
+  background-color: aqua;
+}
+header{
+  grid-area: header;
 }
 
-@keyframes my-animation {
-  from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-// .container > *:nth-child(1) {animation-delay: 0s}
-// .container > *:nth-child(2) {animation-delay: 4s}
-// .container > *:nth-child(3) {animation-delay: 8s}
-
-
-.container > * {
-  display: flex;
-  visibility: visible; position: relative;
-  // top: 0; left: 0; animation: 12s autoplay1 infinite;
 
 
 
-}
+// .parent-container {
+//   width: 100vw;
+//   display: inline-grid;
+//   grid-template-columns: auto 27% 27% 27% ;
+//   grid-template-rows: 8% 30% auto 10%;
+//   grid-area: "side header header header"
+//   "side" "main main main"
+//   "side" "main main main"
+//   "footer footer footer footer";
 
-// @keyframes autoplay1 {
-//   0% {visibility: visible}
-//   33.33% {visibility: hidden}
 // }
 
 
 
-#box{
-  display:flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  overflow: hidden ;
-  justify-content: space-between;
-  margin: 20px;
-  height: 300px;
-  width: 500px;
-  background: url("../../assets/grass.jpg");
-  background-position: center;
-  background-size: cover;
-  border-radius: 1%;
+// .container-one {
+//   grid-area: "header";
+// // width: 100vw;
+// // display: flex;
+// overflow-x: hidden;
+// // border: 2px solid blue;
+
+// }
+
+// .container-two{
+//   grid-area: "side";
+//  background-color: black;
+// }
+
+// .container-three {
+//   grid-area: "main";
+
+// }
+
+// .container-four {
+//   grid-area: "footer";
+//   background-color: green;
+// }
+// #box-container{
+//   display: grid;
+//   grid-row: 1, 3fr;
+//   -moz-animation: my-animation 60s linear infinite;
+//   -webkit-animation: my-animation 60s linear infinite;
+//   animation: my-animation 60s linear infinite;
+//   animation-direction: alternate;
+//   animation-timing-function:cubic-bezier(0.175, 0.185, 0.185, 0.185);
+
+// }
 
 
-}
 
-#desc, #author, #published {
-  font-weight: 400;
-  color: aliceblue;
-}
-
-
-
-#title{
-  position:relative;
-  // z-index: 9;
-  margin: 7px;
-  line-height: 25px;
-  color: #fff;
-  font-family: 'DM Mono', monospace;
-  overflow: hidden;
-
-
-
-}
-
-h3{
-
-}
-
-.trans-container > *{
-  position: inherit;
-  width: auto;
-
-  background-color: black;
-  border: 1px solid red;
-  align-items: center;
-
-}
-
-
-.trans-container #title{
-  overflow: hidden;
-
-}
-body {
-  background: #fff;
-  margin: 0;
-  display: grid;
-}
-.title-container h2{
-  // text-align: left;
-  display: table;
+// @keyframes my-animation {
+//   // determines where inside the div the scrolling begins
+//   from {
+//     -moz-transform: translateX(5%);
+//     -webkit-transform: translateX(5%);
+//     transform: translateX(5%);
+//   }
+//   to {
+//     -moz-transform: translateX(-200%);
+//     -webkit-transform: translateX(-200%);
+//     transform: translateX(-800%);
+//   }
+// }
 
 
 
 
-}
+// .container > * {
+//   display: flex;
+//   visibility: visible; position: relative;
 
 
 
+
+// }
+
+
+// #box{
+//   display:flex;
+//   flex-wrap:nowrap;
+//   flex-direction: column;
+//   overflow: hidden ;
+//   justify-content: space-between;
+//   margin: 20px;
+//   height: 300px;
+//   width: 500px;
+//   background: url("../../assets/grass.jpg");
+//   background-position: center;
+//   background-size: cover;
+//   border-radius: 1%;
+
+
+// }
+
+// #desc, #author, #published {
+//   font-weight: 400;
+//   color: aliceblue;
+// }
+
+
+
+// #title{
+//   position:relative;
+//   margin: 7px;
+//   line-height: 25px;
+//   color: #fff;
+//   font-family: 'DM Mono', monospace;
+//   overflow: hidden;
+
+
+
+// }
+
+// .trans-container > *{
+//   position: inherit;
+//   width: auto;
+//   background-color: black;
+//   border: 1px solid red;
+//   align-items: center;
+
+// }
+
+
+// .trans-container #title{
+//   overflow: hidden;
+
+// }
+// body, html {
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   display: grid;
+//   // grid-template-columns: auto 27% 27% 27% ;
+//   // grid-template-rows: 8% 30% auto 10%;
+//   // grid-area: "side header header header"
+//   // "side" "main main main"
+//   // "footer footer footer footer";
+// }
+// .title-container h2{
+//   text-align: left;
+// }
+
+
+
+
+// .parent-container {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-template-rows: repeat(5, 1fr);
+//   grid-column-gap: 0px;
+//   grid-row-gap: 0px;
+//   border: 12px solid red;
+//   }
+
+// // .container-two {
+// //   // grid-area: 3 / 1 / 6 / 2;
+// //   display: grid;
+// //   grid-template-columns: repeat(3, 1fr);
+// //  background-color: black;
+// // }
+
+// // .conatiner-three {
+// //   grid-area: 3 / 2 / 6 / 5;
+// // }
+
+// // .container-four {
+// //   grid-area: 3 / 5 / 6 / 6;
+// // }
