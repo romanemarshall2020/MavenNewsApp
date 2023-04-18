@@ -1,20 +1,15 @@
 package com.rome.mavennewsapp.newsapi;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.rome.mavennewsapp.model.EverythingReq;
+import com.rome.mavennewsapp.model.requests.EverythingReq;
 import com.rome.mavennewsapp.model.article.Article;
 import com.rome.mavennewsapp.model.sources.ArticleSource;
-import com.rome.mavennewsapp.newsapi.request.EverythingRequest;
-import org.springframework.boot.autoconfigure.web.format.DateTimeFormatters;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.swing.text.DateFormatter;
 import java.net.URI;
-import java.text.DateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -33,16 +28,21 @@ public class NewsApiIntegration {
         RestTemplate restTemplate = new RestTemplate();
 
         // used to make uri with queryPara
+        System.out.println("HERERERERERER");
+        System.out.println(req);
+        System.out.println(req.getQ());
+
         UriComponentsBuilder builder = UriComponentsBuilder.fromUri(uri)
-            .queryParam("q", "Tech")
+            .queryParam("q", req.getQ())
 //            .queryParam("from", req.getFrom().format(format))
 //            .queryParam("to", req.getTo().format(format))
 //            .queryParam("sortBy", "popularity")
 //            .queryParam("apiKey", "ab3971f7a2af4190b5dced2f8d0e4719")
             ;
-//        if(builder.queryParam("from", req.getFrom().format(format));
-//        builder.queryParam("to", req.getTo().format(format));)
 
+//        if(builder.queryParam("from", req.getFrom().format(format));
+//        builder.queryParam("to", req.getTo().format(format));
+//        )
 
         // Request Entity that contains header, our uri and our httpMethod
         RequestEntity<List<Object>> apiReq = new RequestEntity<>(headers, HttpMethod.GET, uri);
@@ -50,7 +50,7 @@ public class NewsApiIntegration {
         // TypeReference of our Response
         ParameterizedTypeReference<Map<String, Object>> typeRef = new ParameterizedTypeReference<>() {};
 
-//        using restTemplate method exchange to make our request and get back a response based no our uri params
+//        using restTemplate method exchange to make our request and get back a response based or our uri params
         ResponseEntity<Map<String, Object>> results = restTemplate.exchange(builder.buildAndExpand(params).toUri(), HttpMethod.GET,apiReq, typeRef);
 
         // creates a variable that takes in an arrayList of Objects (Status, totalResults, and articles(An arrayList of articles)
@@ -59,7 +59,7 @@ public class NewsApiIntegration {
         // creates a variable that only contains the articles from our response object
         ArrayList<Article> articleList = new ArrayList<>();
 
-        // for loop that loops through each article inside the articleList variable which is inside of apiArticles variable
+        // for loop that loops through each article inside the articleList variable which is inside the apiArticles variable
         for (Object apiArticle : apiArticles){
            Article article = new Article();
            // also has a source variable to store or list of sources for each article

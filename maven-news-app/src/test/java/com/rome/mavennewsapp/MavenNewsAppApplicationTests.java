@@ -3,6 +3,7 @@ package com.rome.mavennewsapp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.rome.mavennewsapp.model.article.Article;
+import com.rome.mavennewsapp.model.requests.EverythingReq;
 import com.rome.mavennewsapp.newsapi.NewsApiIntegration;
 import com.rome.mavennewsapp.repository.ArticleRepo;
 import com.rome.mavennewsapp.service.NewsService;
@@ -31,7 +32,7 @@ public class MavenNewsAppApplicationTests {
 
 	@Test
 	public void returnArticles() throws JsonProcessingException {
-		List<Article> list = newsService.getArticles();
+		List<Article> list = newsService.getArticles(new EverythingReq("rome"));
 		assertNotNull(list, "List Exist");
 		assertFalse(list.isEmpty(), "List contains articles" );
 		for (Article article : list

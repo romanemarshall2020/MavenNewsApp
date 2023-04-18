@@ -1,4 +1,4 @@
-package com.rome.mavennewsapp.model;
+package com.rome.mavennewsapp.model.requests;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -24,5 +24,14 @@ public class EverythingReq {
     private String sortBy;
     private int pageSize;
     private int page;
+
+
+    public EverythingReq(String q){
+        this.q = q;
+    }
+
+    public String getQ(){
+        return this.q;
+    }
 
 }
