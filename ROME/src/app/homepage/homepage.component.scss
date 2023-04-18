@@ -3,7 +3,7 @@
   width: 100%;
   display: grid;
   grid-gap: 17px;
-  grid-template-columns: repeat(8, minMax(80px, 243px));
+  grid-template-columns: repeat(8, minMax(80px, 255px));
   grid-template-rows: repeat(4, 319px);
 }
 
@@ -32,6 +32,18 @@
     justify-content: center;
   background-color: brown;
 }
+.container-three-1{
+  grid-column: 7/9;
+  grid-row: 5/2;
+  background: blue;
+}
+
+.container-three-2{
+  background-color: chartreuse;
+  grid-column: 2/7;
+  grid-row: 5/4;
+}
+
 
 .container-four {
   grid-row: 5/5;
