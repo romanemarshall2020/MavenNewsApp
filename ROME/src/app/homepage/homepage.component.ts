@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
   this.postArticles()
 
 
@@ -30,6 +30,8 @@ export class HomepageComponent implements OnInit {
    let articles = this.articleService.findAll().subscribe(data=> {
       this.articles = data
     })
+
+
 
     return articles
     // console.log("my articles " + articles)

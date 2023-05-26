@@ -16,11 +16,19 @@ public class NewsService {
     @Autowired
     NewsApiIntegration newsApiIntegration;
     public List<Article> getArticles(EverythingReq req) throws JsonProcessingException {
-        //String search = req.getQ();
+//        String search = req.getQ();
         List<Article> articleList = newsApiIntegration.requestEverything(req);
+        System.out.println("this is your request " + req);
 
         return articleList;
     }
+
+//    public List<Article> getTopStories(){
+//        EverythingReq req = new EverythingReq();
+//
+//        List<Article> topStories = newsApiIntegration.requestEverything(new EverythingReq(req.getQ()));
+//        return topStories;
+//    }
 
 //    public List<Article> searchArticles() throws JsonProcessingException {
 //        List<Article> articleList = newsApiIntegration.requestEverything();

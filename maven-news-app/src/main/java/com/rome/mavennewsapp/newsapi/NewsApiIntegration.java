@@ -13,7 +13,7 @@ import java.net.URI;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-// News Api client that connects to the api and matches m model objects to the json properties along with setting the api key.
+// News Api client that connects to the api and matches my model objects to the json properties along with setting the api key.
 @Component
 public class NewsApiIntegration {
 
@@ -82,12 +82,12 @@ public class NewsApiIntegration {
 
 
            articleList.add(article);
+
         }
 
 //        System.out.println("[result]: " + results.getBody().get("articles"));
 //        System.out.println("[article]: " + article.get("title"));
 
-//        System.out.println(articleList);
         return articleList;
     }
 

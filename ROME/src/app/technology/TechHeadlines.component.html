@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../app/technology/techHeadlines.component.scss">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- <aside></aside>
+  <span></span>
+  <section></section>
+  <section></section>
+  <section></section>
+  <main></main>
+  <footer></footer> -->
+
+
+
+
+
+
+
+  <!-- <h1 class="home">Home Page</h1>
+  <span class="material-symbols-outlined">
+    search
+  </span> -->
+
+
+
+  <div class="parent-container">
+
+
+    <div class="container-two">
+      <div class="latest-container">
+        <div class="latest">
+          <div class="article">
+            <p>article title</p>
+          </div>
+        </div>
+      </div>
+      <div class="">
+      </div>
+    </div>
+    <div class="container">
+      <div class=" item container-one">
+        <div *ngFor="let article of articles">
+          <div id="box-container">
+            <div id="box">
+              <div class="trans-container">
+                <div class="title-container">
+                  <h3 id="title">{{article.title}}</h3>
+                </div>
+              </div>
+
+              <div class="desc-container">
+                <p id="desc">{{article.description}}</p>
+              </div>
+              <div class="author-container">
+                <h4 id="author">Author:{{article.author}}</h4>
+              </div>
+              <div class="published-container">
+                <h6 id="published">Published:{{article.publishedAt}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-three">
+      <div>
+        <p>container three</p>
+      </div>
+    </div>
+
+    <div class="container-three-1">
+      <div>
+        <p>container second</p>
+      </div>
+    </div>
+
+    <div class="container-three-2">
+      <div>
+        <p>container second</p>
+      </div>
+    </div>
+
+
+
+    <div class="container-four">
+      <div>
+        <p>
+          container four
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

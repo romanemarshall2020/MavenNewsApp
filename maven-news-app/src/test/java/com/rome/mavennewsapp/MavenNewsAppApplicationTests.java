@@ -9,8 +9,13 @@ import com.rome.mavennewsapp.repository.ArticleRepo;
 import com.rome.mavennewsapp.service.NewsService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+
 import java.util.List;
+
+import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -22,6 +27,11 @@ public class MavenNewsAppApplicationTests {
 
 //	@Autowired
 //	private ArticleRepo articleRepo;
+	@Value(value="${local.server.port}")
+	private int port;
+
+	@Autowired
+	private TestRestTemplate restTemplate;
 
 	@Autowired
 	private NewsService newsService;
@@ -44,6 +54,15 @@ public class MavenNewsAppApplicationTests {
 			assertFalse(titles.isEmpty(), "Title is not empty");
 		}
 	}
+
+//	@Test
+//	public void
+
+
+//	@Test
+//	public void greetingShouldReturnDefaultMessage() throws Exception {
+//		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
+//				String.class))
 
 
 
