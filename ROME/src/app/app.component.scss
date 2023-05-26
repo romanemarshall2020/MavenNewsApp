@@ -1,52 +1,13 @@
 
-.app-container{
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  // gap: 0px;
-  // grid-template-columns: 2fr 2fr 1fr;
-}
-//  *::before, *::after {
-//   box-sizing: border-box;
-//   outline: 0;
-// }
-
-
-
-.navi{
-  max-width: 100%;
-
-  // margin-left: 0px;
-  // margin-right: 0px;
-  // margin-top: 4px;
-}
-
-.banner {
-  position: relative;
-  // min-width: 100%;
-  // margin: -20px;
-  top: -10px;
-}
 
 .app-container {
-  overflow: hidden;
+  // overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 0px;
 }
 
-// .route{
-//   justify-content: center;
-// }
-
 body{
   margin: 0;
-  max-width: 100%;
-  // background-color: rgb(240, 239, 239);
 }
-
-// html, body{
-//   background: linear-gradient(to bottom right,#F8F8F9,#111439) ;
-//   max-width: 100%;
-// }
 

@@ -7,14 +7,30 @@ import { Article } from '../models/article';
   providedIn: 'root'
 })
 export class ArticleService {
-
-  articlesURL: string = "http://localhost:8080/home"
+  searchUrl: string =  "http://localhost:8080/search?q=";
+  articlesURL: string = "http://localhost:8080/home";
+  techStories: string = "http://localhost:8080/tech";
 
   constructor(private http: HttpClient) {
     this.findAll().subscribe
+    this.getTechStories().subscribe
+
   }
 
   public findAll(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.articlesURL);
+    // if(){
+      return this.http.get<Article[]>(this.searchUrl + "apple");
+    // }
+
+  }
+
+  public search(qTopic: string){
+
+    return this.http.get<Article[]>(this.searchUrl + "Apple");
+  }
+
+  public getTechStories(): Observable<Article[]>{
+    return this.http.get<Article[]>(this.techStories);
   }
 }
+
