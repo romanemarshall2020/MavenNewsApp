@@ -22,8 +22,8 @@ public class NewsController {
     public List<Article> allArticles() throws JsonProcessingException {
         String q = "*";
         EverythingReq req = new EverythingReq(q);
-        System.out.println(newsService.getArticles(req));
-        System.out.println(req);
+//        System.out.println(newsService.getArticles(req));
+//        System.out.println(req);
         return newsService.getArticles(req);
     }
 
@@ -31,14 +31,14 @@ public class NewsController {
     public List<Article> searchArticles(@RequestParam("q")String search) throws JsonProcessingException {
         System.out.println("before if statement " + search);
 
-//        if (search == null || search == "") {
-//            search = "America";
-//        }
+        if (search == null || search == "") {
+            search = "America";
+        }
         System.out.println("After if statement" + search);
 
         String q = search;
         EverythingReq req = new EverythingReq(q);
-        System.out.println("IN HERE");
+//        System.out.println("IN HERE");
         System.out.println(req);
         return newsService.getArticles(req);
     }
@@ -47,8 +47,8 @@ public class NewsController {
     public List<Article> techArticles() throws JsonProcessingException {
             String q = "technology";
         EverythingReq req = new EverythingReq(q);
-        System.out.println(newsService.getArticles(req));
-        System.out.println(req);
+//        System.out.println(newsService.getArticles(req));
+//        System.out.println(req);
         return newsService.getArticles(req);
     }
 
