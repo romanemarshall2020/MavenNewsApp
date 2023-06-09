@@ -29,7 +29,8 @@ let articles = this.articleService.findAll().subscribe(data=> {
 return articles
   }
 
-  onSubmit(search: NgForm) {
+  // search topic will come from html
+  onSubmit(search: ) {
 
  }
 

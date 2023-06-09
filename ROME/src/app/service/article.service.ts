@@ -23,10 +23,10 @@ export class ArticleService {
     // }
 
   }
-
+ // service layer will get said topic to send back
   public search(qTopic: string){
 
-    return this.http.get<Article[]>(this.searchUrl + "Apple");
+    return this.http.get<Article[]>(this.searchUrl + qTopic);
   }
 
   public getTechStories(): Observable<Article[]>{
