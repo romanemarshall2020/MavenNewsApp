@@ -22,4 +22,8 @@ describe('HomepageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should contain news articles for display", () =>{
+    
+  })
 });

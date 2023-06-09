@@ -132,10 +132,7 @@
 .trans-container #title {
   overflow: hidden;
 }
-// body,
-// html {
-//   // height: 100%;
-// }
+
 body {
   margin: 0;
   display: grid;
@@ -144,26 +141,4 @@ body {
   text-align: left;
 }
 
-// .parent-container {
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   // grid-template-rows: repeat(1, 1fr);
-//   grid-column-gap: 0px;
-//   grid-row-gap: 0px;
-//   border: 12px solid red;
-//   }
 
-// .container-two {
-//   grid-area: side ;
-//   display: grid;
-//   // grid-template-columns: repeat(3, 1fr);
-//  background-color: black;
-// }
-
-// .conatiner-three {
-//   grid-area: 3 / 2 / 6 / 5;
-// }
-
-// .container-four {
-//   // grid-area: 3 / 5 / 6 / 6;
-// }
