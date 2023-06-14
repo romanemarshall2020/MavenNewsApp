@@ -13,7 +13,6 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <button class="cn-button" id="cn-button">+</button> -->
 <div class="nav-container">
   <div class="Logo-container">
     <h1 class="logo">Rome</h1>
@@ -25,9 +24,7 @@
     <!-- <li > <a id="following-link" class="links" routerLink="" >FOLLOWING</a></li> -->
     <li > <a id="region-link" class="links"  routerLink="" >REGION</a></li>
     <form class="example-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
-        <!-- <div>
-          <label for="searchItem"></label>
-        </div> -->
+
         <input id="searchItem" formControlName="searchBox" placeholder="Search Articles" type="text">
         <!-- send topic to service layer  -->
         <input  type="submit" >

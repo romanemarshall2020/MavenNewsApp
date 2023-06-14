@@ -22,8 +22,7 @@ public class NewsController {
     public List<Article> allArticles() throws JsonProcessingException {
         String q = "*";
         EverythingReq req = new EverythingReq(q);
-//        System.out.println(newsService.getArticles(req));
-//        System.out.println(req);
+
         return newsService.getArticles(req);
     }
 
