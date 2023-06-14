@@ -12,10 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class NewsController {
     @Autowired
-    NewsService newsService;
+   private NewsService newsService;
 
     @GetMapping("/home")
 //    public List<Article> searchArticles(@PathVariable("q") String q) throws JsonProcessingException {

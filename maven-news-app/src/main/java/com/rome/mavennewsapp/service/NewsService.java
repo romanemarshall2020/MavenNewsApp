@@ -14,7 +14,7 @@ import java.util.List;
 public class NewsService {
 
     @Autowired
-    NewsApiIntegration newsApiIntegration;
+    private NewsApiIntegration newsApiIntegration;
     public List<Article> getArticles(EverythingReq req) throws JsonProcessingException {
 //        String search = req.getQ();
         List<Article> articleList = newsApiIntegration.requestEverything(req);
