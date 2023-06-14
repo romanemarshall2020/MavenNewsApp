@@ -31,9 +31,9 @@ public class NewsController {
     public List<Article> searchArticles(@RequestParam("q")String search) throws JsonProcessingException {
         System.out.println("before if statement " + search);
 
-        if (search == null || search == "") {
-            search = "America";
-        }
+//        if (search == null || search == "") {
+//            search = "America";
+//        }
         System.out.println("After if statement" + search);
 
         String q = search;
