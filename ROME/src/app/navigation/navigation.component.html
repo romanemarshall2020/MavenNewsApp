@@ -24,12 +24,14 @@
     <li > <a id="world-news-link" class="links"  routerLink="" >WORLD</a></li>
     <!-- <li > <a id="following-link" class="links" routerLink="" >FOLLOWING</a></li> -->
     <li > <a id="region-link" class="links"  routerLink="" >REGION</a></li>
-    <form class="example-form" >
-      <mat-form-field class="example-full-width" >
-        <input matInput placeholder="Search Articles" type="text" value="">
+    <form class="example-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
+        <div>
+          <label for="searchItem"></label>
+        </div>
+        <input id="searchItem" formControlName="searchBox" placeholder="Search Articles" type="text">
         <!-- send topic to service layer  -->
-        <input matInput type="submit" > 
-      </mat-form-field>
+        <input  type="submit" >
+
     </form>
    </ul>
 </div>

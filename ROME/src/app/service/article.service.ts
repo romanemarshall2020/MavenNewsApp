@@ -19,7 +19,7 @@ export class ArticleService {
 
   public findAll(): Observable<Article[]> {
     // if(){
-      return this.http.get<Article[]>(this.searchUrl + "apple");
+      return this.http.get<Article[]>(this.searchUrl + "*");
     // }
 
   }
