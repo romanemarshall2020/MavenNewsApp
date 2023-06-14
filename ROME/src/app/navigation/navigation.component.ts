@@ -29,13 +29,13 @@ export class NavigationComponent implements OnInit {
 
   constructor(private articleService: ArticleService,  private formBuilder: FormBuilder, http: HttpClient) {FormsModule }
 // seen an example where this is supposed to be async and i do a try catch when calling onsubmit for error handling.
-  async ngOnInit() {
-    try {
-        let article = await this.onSubmit();
-        this.articles = this.articles;
-    } catch{
+   ngOnInit() {
+    // try {
+         this.onSubmit();
+        // this.article = this.articles;
+    // } catch{
 
-    }
+    // }
 
   }
 
@@ -46,10 +46,10 @@ export class NavigationComponent implements OnInit {
 
 
   // search topic will come from html
-  onSubmit = async() => {
+  onSubmit = () => {
     console.log("its been called")
     console.log(this.searchForm.value)
-    let articles = await this.articleService.search(this.searchForm.value).subscribe(data=> {
+    let articles = this.articleService.search(this.searchForm.value["searchBox"]).subscribe(data=> {
     console.log(this.articles = data)
    },
 

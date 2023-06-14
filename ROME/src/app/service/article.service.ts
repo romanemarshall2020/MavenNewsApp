@@ -16,7 +16,7 @@ export class ArticleService {
     this.findAll().subscribe
     this.getTechStories().subscribe
     // calling search function but not sure how to give it a parameter so for now its an empty string
-    this.search("").subscribe
+    // this.search("").subscribe
 
   }
 
