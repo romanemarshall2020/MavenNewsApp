@@ -4,6 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { Article } from '../models/article';
 import { ArticleService } from '../service/article.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { SharedService } from '../service/sharedservice';
 
 
 
@@ -24,7 +26,9 @@ export class NavigationComponent implements OnInit {
   })
 
 
-  constructor(private articleService: ArticleService,  private formBuilder: FormBuilder, http: HttpClient) {FormsModule }
+
+
+  constructor(private articleService: ArticleService,  private router: Router, private sharedserivce: SharedService) {FormsModule }
   // anything placed here will take affect the moment the application runs
   ngOnInit() {
   }
@@ -41,6 +45,8 @@ export class NavigationComponent implements OnInit {
     console.log(this.searchForm.value["searchBox"])
     let articles = this.articleService.search(this.searchForm.value["searchBox"]).subscribe(data=> {
     console.log(this.articles = data)
+    let settingData = this.sharedserivce.setSearchData(data)
+    console.log(settingData)
    },
 
 // error handling might be necessary but does not seem to be needed at the moment
@@ -49,7 +55,8 @@ export class NavigationComponent implements OnInit {
    }
    )
     console.log(articles)
-    // return result
+   this.router.navigateByUrl("/search")
+    // return articles
  }
 
 }
