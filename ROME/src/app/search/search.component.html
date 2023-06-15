@@ -6,9 +6,23 @@
   <title>Search Results</title>
 </head>
 <body>
-    <div class="articles-container">
-      <div class="article-list">
-        
+    <div class="articles-list-container">
+      <div class="article-list" *ngFor="let article of articles">
+          <div class="article-container">
+              <div class="title-container">
+                <h3 id="title">{{article.title}}</h3>
+              </div>
+                <!-- <div class="description">
+                <p> {{article.description}}</p>
+              </div> -->
+              <div class="author-container">
+                <h4 id="author"> Author:{{article.author}}</h4>
+              </div>
+              <div class="published">
+                <h4 id="published">{{article.publishedAt}}</h4>
+
+              </div>
+          </div>
       </div>
     </div>
 </body>

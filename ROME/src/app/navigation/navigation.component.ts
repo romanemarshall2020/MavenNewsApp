@@ -41,12 +41,9 @@ export class NavigationComponent implements OnInit {
 
   // search topic will come from html
   onSubmit = () => {
-    console.log("its been called")
-    console.log(this.searchForm.value["searchBox"])
     let articles = this.articleService.search(this.searchForm.value["searchBox"]).subscribe(data=> {
-    console.log(this.articles = data)
-    let settingData = this.sharedserivce.setSearchData(data)
-    console.log(settingData)
+    this.sharedserivce.setSearchData(data)
+
    },
 
 // error handling might be necessary but does not seem to be needed at the moment

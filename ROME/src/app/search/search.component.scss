@@ -1,0 +1,50 @@
+.articles-list-container{
+  display: grid;
+  grid-template-columns: repeat(3 ,auto);
+  // grid-template-rows: repeat(3, auto);
+
+
+
+  // gap: 60px;
+}
+
+#title {
+  font-size: 18px;
+  padding: 5px;
+  margin: 0px;
+  // line-height: 10px;
+  font-weight:10px ;
+}
+
+.article-container{
+  display: grid;
+  // grid-template-columns: repeat(2 ,auto);
+  // grid-template-rows: repeat(2, auto);
+  width:80%;
+  height: auto;
+  padding: 10px;
+}
+
+.article-list{
+  display: grid;
+  // // grid-template-columns: repeat(2 ,auto);
+  // // grid-template-rows: repeat(2, auto);
+
+
+
+
+}
+#author{
+  padding: 10px;
+}
+
+#published{
+  padding-left: 10px;
+  padding-top: 0%;
+}
+// .description {
+//   word-wrap: break-word;
+//   font-size: 10px;
+//   line-height: 10px;
+
+// }
